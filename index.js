@@ -31,7 +31,26 @@ console.log(arr3);
 //QUESTION 4
 //Write a program to remove duplicates from the following array. Console the array without duplicates, and console another array that only contains the duplicates
 
+let array = ["boy", "man", "girl", "school", "girl", "woman"];
 
+let uniqueArray = [];
+let duplicatesArray = [];
+let elementCount = {};
+
+array.forEach(item => {
+    if (elementCount[item]) {
+        elementCount[item]++;
+        if (elementCount[item] === 2) {
+            duplicatesArray.push(item);
+        }
+    } else {
+        elementCount[item] = 1;
+        uniqueArray.push(item);
+    }
+});
+
+console.log("Array without duplicates:", uniqueArray);
+console.log("Array with duplicates:", duplicatesArray);
 
 //QUESTION 5
 ////let arr = ["boy", "man", "girl",  "school", "girl", "woman"];
